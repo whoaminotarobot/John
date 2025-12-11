@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>App Settings - Smart Beehive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300,400,500,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#FFC107",
+            "primary-dark": "#FFA000",
+            "background-light": "#FFF8E1",
+            "background-dark": "#1C1600",
+            "surface-dark": "#2E2400",
+            "text-dark-primary": "#FFFFFF",
+            "text-dark-secondary": "#BDBDBD",
+            "text-light-primary": "#424242",
+            "text-light-secondary": "#757575",
+            "border-dark": "#424242"
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style type="text/tailwindcss">.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+    font-size: 24px
+    }
+body {
+    min-height: max(884px, 100dvh)
+    }
+.honeycomb-bg {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCMDn2tOb5FrxlY1gkVCGulPShAls5cErPHp0eciLtA8j3qs7BZkH3XzvHDtO9SBUrex63pvIGJokDXP3jTeNeu1F_gk1iC7rw8TsKcqOViD0DWTuCyNrDV20f7IecJWksX6533pZBx_geE_0RKNcL8QYcp8hVZ6jzewCW9mYVbowpy7eivyZhVsu0RW23DOE58ZwpTXkK37QXRAOdp4YbKgf4ykvo3NzUDd4Rro5VpEwlZV79xyglwUMunx6gzReIfqrYutpuitp8r)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark antialiased honeycomb-bg">
+<div class="flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 pb-2 justify-between sticky top-0 z-10 border-b border-white/5 dark:border-border-dark/50">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary">arrow_back_ios_new</span>
+</div>
+<h2 class="text-text-light-primary dark:text-text-dark-primary text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Settings</h2>
+<div class="flex size-12 shrink-0 items-center justify-end"></div>
+</div>
+<main class="flex-1 overflow-y-auto px-4 pt-6 pb-20">
+<div class="flex flex-col space-y-8">
+<div class="flex items-center space-x-4">
+<div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30">
+<span class="material-symbols-outlined text-primary text-4xl">person</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-text-light-primary dark:text-text-dark-primary">Apiarist Bee</h3>
+<p class="text-sm text-text-light-secondary dark:text-text-dark-secondary">apiarist.bee@hivemind.com</p>
+</div>
+<div class="flex-1 text-right">
+<button class="text-primary-dark dark:text-primary text-sm font-semibold">Edit</button>
+</div>
+</div>
+<div class="flex flex-col space-y-1">
+<h4 class="px-4 pb-2 text-sm font-semibold text-text-light-secondary dark:text-text-dark-secondary uppercase tracking-wider">Devices</h4>
+<div class="bg-white/5 dark:bg-surface-dark/40 rounded-xl overflow-hidden backdrop-blur-sm border border-black/5 dark:border-border-dark/50">
+<a class="flex items-center p-4 space-x-4 transition-colors duration-200 hover:bg-black/5 dark:hover:bg-white/5 border-b border-black/5 dark:border-border-dark/50" href="#">
+<div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">hive</span>
+</div>
+<span class="flex-1 text-text-light-primary dark:text-text-dark-primary">Manage Beehive Devices</span>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary">chevron_right</span>
+</a>
+<a class="flex items-center p-4 space-x-4 transition-colors duration-200 hover:bg-black/5 dark:hover:bg-white/5" href="#">
+<div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">add_circle</span>
+</div>
+<span class="flex-1 text-text-light-primary dark:text-text-dark-primary">Add New Device</span>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary">chevron_right</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col space-y-1">
+<h4 class="px-4 pb-2 text-sm font-semibold text-text-light-secondary dark:text-text-dark-secondary uppercase tracking-wider">Notifications</h4>
+<div class="bg-white/5 dark:bg-surface-dark/40 rounded-xl overflow-hidden backdrop-blur-sm border border-black/5 dark:border-border-dark/50">
+<div class="flex items-center p-4 space-x-4 border-b border-black/5 dark:border-border-dark/50">
+<div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</div>
+<span class="flex-1 text-text-light-primary dark:text-text-dark-primary">Push Notifications</span>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-zinc-200 dark:bg-zinc-700 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-zinc-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-zinc-600 peer-checked:bg-primary-dark dark:peer-checked:bg-primary"></div>
+</div>
+</div>
+<a class="flex items-center p-4 space-x-4 transition-colors duration-200 hover:bg-black/5 dark:hover:bg-white/5" href="#">
+<div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">tune</span>
+</div>
+<span class="flex-1 text-text-light-primary dark:text-text-dark-primary">Notification Preferences</span>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary">chevron_right</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col space-y-1">
+<h4 class="px-4 pb-2 text-sm font-semibold text-text-light-secondary dark:text-text-dark-secondary uppercase tracking-wider">General</h4>
+<div class="bg-white/5 dark:bg-surface-dark/40 rounded-xl overflow-hidden backdrop-blur-sm border border-black/5 dark:border-border-dark/50">
+<a class="flex items-center p-4 space-x-4 transition-colors duration-200 hover:bg-black/5 dark:hover:bg-white/5 border-b border-black/5 dark:border-border-dark/50" href="#">
+<div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">straighten</span>
+</div>
+<span class="flex-1 text-text-light-primary dark:text-text-dark-primary">Units of Measurement</span>
+<span class="text-text-light-secondary dark:text-text-dark-secondary text-sm mr-2">Metric</span>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary">chevron_right</span>
+</a>
+<a class="flex items-center p-4 space-x-4 transition-colors duration-200 hover:bg-black/5 dark:hover:bg-white/5" href="#">
+<div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">contrast</span>
+</div>
+<span class="flex-1 text-text-light-primary dark:text-text-dark-primary">Appearance</span>
+<span class="text-text-light-secondary dark:text-text-dark-secondary text-sm mr-2">Dark</span>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary">chevron_right</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col space-y-1">
+<h4 class="px-4 pb-2 text-sm font-semibold text-text-light-secondary dark:text-text-dark-secondary uppercase tracking-wider">Support &amp; Legal</h4>
+<div class="bg-white/5 dark:bg-surface-dark/40 rounded-xl overflow-hidden backdrop-blur-sm border border-black/5 dark:border-border-dark/50">
+<a class="flex items-center p-4 space-x-4 transition-colors duration-200 hover:bg-black/5 dark:hover:bg-white/5 border-b border-black/5 dark:border-border-dark/50" href="#">
+<div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">help_outline</span>
+</div>
+<span class="flex-1 text-text-light-primary dark:text-text-dark-primary">Help &amp; Support</span>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary">chevron_right</span>
+</a>
+<a class="flex items-center p-4 space-x-4 transition-colors duration-200 hover:bg-black/5 dark:hover:bg-white/5 border-b border-black/5 dark:border-border-dark/50" href="#">
+<div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">privacy_tip</span>
+</div>
+<span class="flex-1 text-text-light-primary dark:text-text-dark-primary">Privacy Policy</span>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary">chevron_right</span>
+</a>
+<a class="flex items-center p-4 space-x-4 transition-colors duration-200 hover:bg-black/5 dark:hover:bg-white/5" href="#">
+<div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">gavel</span>
+</div>
+<span class="flex-1 text-text-light-primary dark:text-text-dark-primary">Terms of Service</span>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary">chevron_right</span>
+</a>
+</div>
+</div>
+<div class="pt-4">
+<div class="bg-white/5 dark:bg-surface-dark/40 rounded-xl overflow-hidden backdrop-blur-sm border border-black/5 dark:border-border-dark/50">
+<button class="w-full flex items-center justify-center p-4 space-x-3 transition-colors duration-200 hover:bg-red-500/10">
+<span class="material-symbols-outlined text-red-500">logout</span>
+<span class="text-red-500 font-semibold">Log Out</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

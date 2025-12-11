@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Beehive Alerts</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#FFC107",
+            "background-light": "#FFFBEB",
+            "background-dark": "#1A1100",
+            "critical": "#D32F2F",
+            "warning": "#FFA000"
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style type="text/tailwindcss">
+    @layer utilities {
+      .honeycomb-bg-pattern {
+        --honeycomb-color-light: theme(colors.primary / 8%);
+        --honeycomb-color-dark: theme(colors.primary / 10%);
+        --honeycomb-color: var(--honeycomb-color-light);
+        --honeycomb-size: 80px;
+        --honeycomb-height: calc(var(--honeycomb-size) * 0.866);background-color: transparent;
+        background-image:
+          linear-gradient(to bottom, transparent calc(var(--honeycomb-size) / 4), var(--honeycomb-color) calc(var(--honeycomb-size) / 4) calc(var(--honeycomb-size) / 4 + 1px), transparent calc(var(--honeycomb-size) / 4 + 1px)),
+          linear-gradient(to bottom, var(--honeycomb-color) 1px, transparent 1px),
+          linear-gradient(30deg, var(--honeycomb-color) 1px, transparent 1px),
+          linear-gradient(-30deg, var(--honeycomb-color) 1px, transparent 1px);
+        background-size: var(--honeycomb-height) var(--honeycomb-size), var(--honeycomb-height) calc(var(--honeycomb-size) / 2), var(--honeycomb-height) var(--honeycomb-size), var(--honeycomb-height) var(--honeycomb-size);
+        background-position: 0 0, 0 0, 0 0, 0 0;
+        background-repeat: repeat;
+      }
+      .dark .honeycomb-bg-pattern {
+        --honeycomb-color: var(--honeycomb-color-dark);
+      }
+      .honeycomb-clip {
+        clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+      }
+    }
+  </style>
+<style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="mx-auto flex h-auto min-h-screen w-full max-w-md flex-col overflow-hidden relative">
+<div class="absolute inset-0 honeycomb-bg-pattern opacity-100"></div>
+<header class="flex items-center bg-transparent px-4 pt-4 pb-2 justify-between sticky top-0 z-10 backdrop-blur-sm bg-background-light/80 dark:bg-background-dark/80">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-zinc-800 dark:text-amber-100" style="font-size: 24px;">arrow_back_ios_new</span>
+</div>
+<h1 class="text-zinc-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Alerts</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="flex cursor-pointer items-center justify-center rounded-lg h-12 bg-transparent text-zinc-800 dark:text-amber-100 gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined" style="font-size: 24px;">tune</span>
+</button>
+</div>
+</header>
+<div class="flex px-4 py-3 z-10">
+<div class="flex h-10 flex-1 items-center justify-center rounded-lg bg-zinc-200/80 dark:bg-zinc-900/60 p-1 backdrop-blur-sm">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-2 has-[:checked]:bg-primary has-[:checked]:text-zinc-900 text-zinc-500 dark:text-amber-200 text-sm font-medium leading-normal has-[:checked]:dark:bg-primary has-[:checked]:dark:text-zinc-900 has-[:checked]:font-semibold">
+<span class="truncate">Active</span>
+<input checked="" class="invisible w-0" name="alert-type" type="radio" value="Active"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-2 has-[:checked]:bg-primary has-[:checked]:text-zinc-900 text-zinc-500 dark:text-amber-200 text-sm font-medium leading-normal has-[:checked]:dark:bg-primary has-[:checked]:dark:text-zinc-900 has-[:checked]:font-semibold">
+<span class="truncate">History</span>
+<input class="invisible w-0" name="alert-type" type="radio" value="History"/>
+</label>
+</div>
+</div>
+<main class="flex flex-col gap-3 px-4 py-2 z-10">
+<div class="flex items-center gap-4 bg-background-light/80 dark:bg-zinc-900/70 rounded-xl px-4 min-h-[88px] py-2 justify-between shadow-sm dark:shadow-none border border-transparent dark:border-zinc-800 backdrop-blur-sm">
+<div class="flex items-center gap-4 w-full">
+<div class="text-white flex items-center justify-center bg-critical shrink-0 size-12 honeycomb-clip">
+<span class="material-symbols-outlined" style="font-size: 24px;">crisis_alert</span>
+</div>
+<div class="flex flex-col justify-center flex-grow">
+<p class="text-zinc-900 dark:text-amber-50 text-base font-medium leading-normal line-clamp-1">Potential Swarm Warning</p>
+<div class="flex items-center justify-between">
+<p class="text-zinc-500 dark:text-amber-200/80 text-sm font-normal leading-normal line-clamp-2">Backyard Hive</p>
+<p class="text-zinc-400 dark:text-amber-400/60 text-xs font-normal leading-normal">5 mins ago</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-background-light/80 dark:bg-zinc-900/70 rounded-xl px-4 min-h-[88px] py-2 justify-between shadow-sm dark:shadow-none border border-transparent dark:border-zinc-800 backdrop-blur-sm">
+<div class="flex items-center gap-4 w-full">
+<div class="text-zinc-900 flex items-center justify-center bg-warning shrink-0 size-12 honeycomb-clip">
+<span class="material-symbols-outlined" style="font-size: 24px;">thermostat</span>
+</div>
+<div class="flex flex-col justify-center flex-grow">
+<p class="text-zinc-900 dark:text-amber-50 text-base font-medium leading-normal line-clamp-1">High Temperature Alert</p>
+<div class="flex items-center justify-between">
+<p class="text-zinc-500 dark:text-amber-200/80 text-sm font-normal leading-normal line-clamp-2">Hive A-01</p>
+<p class="text-zinc-400 dark:text-amber-400/60 text-xs font-normal leading-normal">15 mins ago</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-background-light/80 dark:bg-zinc-900/70 rounded-xl px-4 min-h-[88px] py-2 justify-between shadow-sm dark:shadow-none border border-transparent dark:border-zinc-800 backdrop-blur-sm">
+<div class="flex items-center gap-4 w-full">
+<div class="text-zinc-900 flex items-center justify-center bg-warning shrink-0 size-12 honeycomb-clip">
+<span class="material-symbols-outlined" style="font-size: 24px;">sensors</span>
+</div>
+<div class="flex flex-col justify-center flex-grow">
+<p class="text-zinc-900 dark:text-amber-50 text-base font-medium leading-normal line-clamp-1">Unusual Activity Detected</p>
+<div class="flex items-center justify-between">
+<p class="text-zinc-500 dark:text-amber-200/80 text-sm font-normal leading-normal line-clamp-2">West Field Hive 3</p>
+<p class="text-zinc-400 dark:text-amber-400/60 text-xs font-normal leading-normal">2h ago</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hive Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#facc15", // yellow-400
+            "background-light": "#fefce8", // yellow-50
+            "background-dark": "#1c1917", // stone-900
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style type="text/tailwindcss">body {
+    min-height: max(884px, 100dvh)
+    }
+.honeycomb-bg {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCMDn2tOb5FrxlY1gkVCGulPShAls5cErPHp0eciLtA8j3qs7BZkH3XzvHDtO9SBUrex63pvIGJokDXP3jTeNeu1F_gk1iC7rw8TsKcqOViD0DWTuCyNrDV20f7IecJWksX6533pZBx_geE_0RKNcL8QYcp8hVZ6jzewCW9mYVbowpy7eivyZhVsu0RW23DOE58ZwpTXkK37QXRAOdp4YbKgf4ykvo3NzUDd4Rro5VpEwlZV79xyglwUMunx6gzReIfqrYutpuitp8r)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col font-display group/design-root overflow-x-hidden">
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined text-black dark:text-white" style="font-size: 24px;">arrow_back_ios_new</span>
+</div>
+<h2 class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Hive Details</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-transparent text-black dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined" style="font-size: 24px;">settings</span>
+</button>
+</div>
+</div>
+<div class="p-4 @container">
+<div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start shadow-[0_0_4px_rgba(0,0,0,0.1)] bg-yellow-100 dark:bg-stone-800">
+<div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-4 @xl:px-4 px-4">
+<p class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Apiary 1 - Hive B</p>
+<div class="flex items-end gap-3 justify-between">
+<div class="flex flex-col gap-1">
+<p class="text-yellow-600 dark:text-yellow-400 text-base font-medium leading-normal">Health Status: Good</p>
+<p class="text-gray-500 dark:text-stone-400 text-base font-normal leading-normal">Last updated: Just now</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex px-4 py-3">
+<div class="flex h-10 flex-1 items-center justify-center rounded-lg bg-yellow-200/50 dark:bg-stone-800 p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-stone-950 has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-black dark:has-[:checked]:text-white text-gray-500 dark:text-stone-400 text-sm font-medium leading-normal">
+<span class="truncate">24H</span>
+<input class="invisible w-0" name="time-range-selector" type="radio" value="24H"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-stone-950 has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-black dark:has-[:checked]:text-white text-gray-500 dark:text-stone-400 text-sm font-medium leading-normal">
+<span class="truncate">7D</span>
+<input checked="" class="invisible w-0" name="time-range-selector" type="radio" value="7D"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-stone-950 has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-black dark:has-[:checked]:text-white text-gray-500 dark:text-stone-400 text-sm font-medium leading-normal">
+<span class="truncate">30D</span>
+<input class="invisible w-0" name="time-range-selector" type="radio" value="30D"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-stone-950 has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-black dark:has-[:checked]:text-white text-gray-500 dark:text-stone-400 text-sm font-medium leading-normal">
+<span class="truncate">All Time</span>
+<input class="invisible w-0" name="time-range-selector" type="radio" value="All Time"/>
+</label>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 px-4 py-6">
+<div class="flex min-w-72 flex-1 flex-col gap-2 rounded-xl border border-yellow-200 dark:border-stone-700 p-6 bg-yellow-100 dark:bg-stone-800 honeycomb-bg">
+<p class="text-black dark:text-white text-base font-medium leading-normal">Temperature</p>
+<p class="text-black dark:text-white tracking-light text-[32px] font-bold leading-tight truncate">34°C</p>
+<div class="flex gap-1">
+<p class="text-gray-500 dark:text-stone-400 text-base font-normal leading-normal">Last 7 Days</p>
+<p class="text-green-600 dark:text-green-400 text-base font-medium leading-normal">+1.2%</p>
+</div>
+<div class="flex min-h-[180px] flex-1 flex-col gap-8 py-4">
+<svg fill="none" height="148" preserveAspectRatio="none" viewBox="-3 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z" fill="url(#chart-gradient-dark)"></path>
+<path class="stroke-yellow-500 dark:stroke-yellow-400" d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke-linecap="round" stroke-width="3"></path>
+<defs>
+<linearGradient gradientUnits="userSpaceOnUse" id="chart-gradient-dark" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#ca8a04" stop-opacity="0.5"></stop>
+<stop offset="1" stop-color="#ca8a04" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+</svg>
+</div>
+</div>
+<div class="flex min-w-72 flex-1 flex-col gap-2 rounded-xl border border-yellow-200 dark:border-stone-700 p-6 bg-yellow-100 dark:bg-stone-800 honeycomb-bg">
+<p class="text-black dark:text-white text-base font-medium leading-normal">Humidity</p>
+<p class="text-black dark:text-white tracking-light text-[32px] font-bold leading-tight truncate">65%</p>
+<div class="flex gap-1">
+<p class="text-gray-500 dark:text-stone-400 text-base font-normal leading-normal">Last 7 Days</p>
+<p class="text-red-500 dark:text-red-400 text-base font-medium leading-normal">-0.5%</p>
+</div>
+<div class="flex min-h-[180px] flex-1 flex-col gap-8 py-4">
+<svg fill="none" height="148" preserveAspectRatio="none" viewBox="-3 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 65C18.1538 65 18.1538 111 36.3077 111C54.4615 111 54.4615 81 72.6154 81C90.7692 81 90.7692 33 108.923 33C127.077 33 127.077 93 145.231 93C163.385 93 163.385 41 181.538 41C199.692 41 199.692 81 217.846 81C236 81 236 25 254.154 25C272.308 25 272.308 129 290.462 129C308.615 129 308.615 1 326.769 1C344.923 1 344.923 149 363.077 149C381.231 149 381.231 61 399.385 61C417.538 61 417.538 101 435.692 101C453.846 101 453.846 45 472 45V149H326.769H0V65Z" fill="url(#chart-gradient-dark)"></path>
+<path class="stroke-yellow-500 dark:stroke-yellow-400" d="M0 65C18.1538 65 18.1538 111 36.3077 111C54.4615 111 54.4615 81 72.6154 81C90.7692 81 90.7692 33 108.923 33C127.077 33 127.077 93 145.231 93C163.385 93 163.385 41 181.538 41C199.692 41 199.692 81 217.846 81C236 81 236 25 254.154 25C272.308 25 272.308 129 290.462 129C308.615 129 308.615 1 326.769 1C344.923 1 344.923 149 363.077 149C381.231 149 381.231 61 399.385 61C417.538 61 417.538 101 435.692 101C453.846 101 453.846 45 472 45" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+</div>
+</div>
+<div class="flex min-w-72 flex-1 flex-col gap-2 rounded-xl border border-yellow-200 dark:border-stone-700 p-6 bg-yellow-100 dark:bg-stone-800 honeycomb-bg">
+<p class="text-black dark:text-white text-base font-medium leading-normal">Vibration</p>
+<p class="text-black dark:text-white tracking-light text-[32px] font-bold leading-tight truncate">Normal</p>
+<div class="flex gap-1">
+<p class="text-gray-500 dark:text-stone-400 text-base font-normal leading-normal">Last 7 Days</p>
+<p class="text-green-600 dark:text-green-400 text-base font-medium leading-normal">+0.1%</p>
+</div>
+<div class="flex min-h-[180px] flex-1 flex-col gap-8 py-4">
+<svg fill="none" height="148" preserveAspectRatio="none" viewBox="-3 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 139C18.1538 139 18.1538 121 36.3077 121C54.4615 121 54.4615 131 72.6154 131C90.7692 131 90.7692 143 108.923 143C127.077 143 127.077 123 145.231 123C163.385 123 163.385 141 181.538 141C199.692 141 199.692 131 217.846 131C236 131 236 145 254.154 145C272.308 145 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 131 363.077 131C381.231 131 381.231 141 399.385 141C417.538 141 417.538 129 435.692 129C453.846 129 453.846 145 472 145V149H326.769H0V139Z" fill="url(#chart-gradient-dark)"></path>
+<path class="stroke-yellow-500 dark:stroke-yellow-400" d="M0 139C18.1538 139 18.1538 121 36.3077 121C54.4615 121 54.4615 131 72.6154 131C90.7692 131 90.7692 143 108.923 143C127.077 143 127.077 123 145.231 123C163.385 123 163.385 141 181.538 141C199.692 141 199.692 131 217.846 131C236 131 236 145 254.154 145C272.308 145 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 131 363.077 131C381.231 131 381.231 141 399.385 141C417.538 141 417.538 129 435.692 129C453.846 129 453.846 145 472 145" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+</div>
+</div>
+</div>
+<h3 class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">AI Insights</h3>
+<div class="px-4 pb-8">
+<div class="flex flex-col gap-3 rounded-xl bg-yellow-100 dark:bg-stone-800 p-4">
+<div class="flex items-start gap-4">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/50">
+<span class="material-symbols-outlined text-green-600 dark:text-green-400">thermostat</span>
+</div>
+<div class="flex flex-col">
+<p class="text-black dark:text-white font-medium">Brood temperature is stable</p>
+<p class="text-sm text-gray-500 dark:text-stone-400">Oct 26, 9:41 AM</p>
+</div>
+</div>
+<div class="w-full h-px bg-yellow-200 dark:border-stone-700"></div>
+<div class="flex items-start gap-4">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900/50">
+<span class="material-symbols-outlined text-amber-600 dark:text-amber-400">water_drop</span>
+</div>
+<div class="flex flex-col">
+<p class="text-black dark:text-white font-medium">High humidity detected</p>
+<p class="text-sm text-gray-500 dark:text-stone-400">Oct 25, 2:15 PM</p>
+</div>
+</div>
+<div class="w-full h-px bg-yellow-200 dark:border-stone-700"></div>
+<div class="flex items-start gap-4">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-red-100 dark:bg-red-900/50">
+<span class="material-symbols-outlined text-red-600 dark:text-red-400">vibration</span>
+</div>
+<div class="flex flex-col">
+<p class="text-black dark:text-white font-medium">Unusual vibration pattern at 3 AM</p>
+<p class="text-sm text-gray-500 dark:text-stone-400">Oct 24, 3:02 AM</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>
